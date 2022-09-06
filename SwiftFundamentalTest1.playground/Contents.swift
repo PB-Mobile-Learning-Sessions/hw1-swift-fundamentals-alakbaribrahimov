@@ -680,7 +680,7 @@ class MovingCircle: Circle {
             return Point(x: origin.x + radius, y: origin.y + radius)
         }
         set {
-            self.origin = Point(x: 0, y: 0)
+            self.origin = newValue // modified
         }
     }
     
@@ -698,6 +698,7 @@ class MovingCircle: Circle {
     
     func move(by: Point) {
         // update only center
+        self.center = by // modified
     }
 }
 
