@@ -523,7 +523,14 @@ class SwiftFundamentals1: SwiftFundamentals1Protocol {
     }
     
     func filterShapes(items: [Any]) -> [Shape] {
-        return []
+        var filteredShapes = [Shape]()
+        items.forEach { item in
+            if item is Shape {
+                filteredShapes.append(item as! Shape)
+            }
+        }
+
+        return filteredShapes
     }
     
     func setCounter(counter: inout BigCounter, value: Int) {
