@@ -147,7 +147,7 @@ class SwiftFundamentalsTest1: XCTestCase {
     func testSubtract() {
         let set: Set = [4, 2, 8, 0, 9, 3, 5]
         let diff: Set = [1, 4, 9, 3, 7]
-        let expectedValue: Set = [4, 2, 8, 0, 5]
+        let expectedValue: Set = [2, 8, 0, 5] // deleted 4
         
         let result = self.instance.subtract(original: set, diff: diff)
         
@@ -472,7 +472,7 @@ class SwiftFundamentals1: SwiftFundamentals1Protocol {
     
     func subtract(original: Set<Int>, diff: Set<Int>) -> Set<Int> {
         // return the set of elements of `original` which are not present in `diff` set
-        return Set<Int>()
+        return original.subtracting(diff)
     }
     
     func applyDictionaryOperations(_ operations: [DictionaryOperation]) -> Dictionary<String, Int> {
