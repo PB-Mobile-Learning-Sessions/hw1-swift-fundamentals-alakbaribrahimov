@@ -137,7 +137,7 @@ class SwiftFundamentalsTest1: XCTestCase {
     func testCommonElements() {
         let set1: Set = [4, 2, 8, 0, 9, 3, 5]
         let set2: Set = [1, 4, 9, 3, 7]
-        let expectedValue: Set = [9, 3]
+        let expectedValue: Set = [4 ,9, 3] // added 4
         
         let result = self.instance.commonElements(set1: set1, set2: set2)
         
@@ -467,7 +467,7 @@ class SwiftFundamentals1: SwiftFundamentals1Protocol {
     
     func commonElements(set1: Set<Int>, set2: Set<Int>) -> Set<Int> {
         // return the set of elements occurs in both of the set
-        return Set<Int>()
+        return set1.intersection(set2)
     }
     
     func subtract(original: Set<Int>, diff: Set<Int>) -> Set<Int> {
