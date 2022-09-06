@@ -501,6 +501,7 @@ class SwiftFundamentals1: SwiftFundamentals1Protocol {
     }
     
     func updatePersonName(person: inout Person, name: String) -> Person {
+        person.update(newName: name)
         return person
     }
     
@@ -556,8 +557,8 @@ struct Person {
         self._name = name
     }
     
-    func update(newName: String) {
-        
+    mutating func update(newName: String) {
+        self._name = newName // modified
     }
 }
 
