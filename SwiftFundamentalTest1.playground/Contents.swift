@@ -506,6 +506,7 @@ class SwiftFundamentals1: SwiftFundamentals1Protocol {
     }
     
     func updateTrainName(train: inout Train, name: String) -> Train {
+        train.update(newName: name)
         return train
     }
     
@@ -570,6 +571,7 @@ class Train {
     }
     
     func update(newName: String) {
+        name = newName // modified
     }
 }
 
