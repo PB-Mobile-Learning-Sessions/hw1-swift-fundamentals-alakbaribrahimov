@@ -477,7 +477,18 @@ class SwiftFundamentals1: SwiftFundamentals1Protocol {
     
     func applyDictionaryOperations(_ operations: [DictionaryOperation]) -> Dictionary<String, Int> {
         // create an empty dictionary, and apply `operations` by order
-        return Dictionary<String, Int>()
+        var dictionary = [String : Int]()
+        operations.forEach { operation in
+            switch operation {
+            case .add(let key, let value) :
+                dictionary[key] = value
+            case .remove(let key) :
+                dictionary.removeValue(forKey: key)
+            case .update(let key, let value) :
+                if dictionary[key] != nil { dictionary.updateValue(value, forKey: key) }
+            }
+        }
+        return dictionary
     }
     
     func getValuesIfContains(from dictionary: Dictionary<String, Int>, with keys: Set<String>) -> Dictionary<String, Int> {
