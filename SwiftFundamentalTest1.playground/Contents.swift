@@ -587,8 +587,8 @@ class Cat: Animal {
     let color: String
     
     init(color: String) {
-        self.color = ""
-        super.init(legCount: 0)
+        self.color = color // modified
+        super.init(legCount: 4)
     }
 }
 
