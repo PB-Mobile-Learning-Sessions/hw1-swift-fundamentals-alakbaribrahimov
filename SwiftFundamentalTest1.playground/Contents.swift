@@ -658,10 +658,10 @@ class Rect: Shape {
 
 @propertyWrapper
 struct TenOrMore {
-    private var number = 8
+    private var number = 10 // modified
     var wrappedValue: Int {
         get { return number }
-        set { number = max(newValue, 8) }
+        set { number = max(newValue, 10) } // modified
     }
 }
 
@@ -669,7 +669,7 @@ struct BigCounter {
     @TenOrMore var value: Int
     
     init() {
-        self.value = 8
+        self.value = 10 // modified
     }
 }
 
