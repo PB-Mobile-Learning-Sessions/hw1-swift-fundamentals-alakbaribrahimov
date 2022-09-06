@@ -443,6 +443,7 @@ class SwiftFundamentals1: SwiftFundamentals1Protocol {
     
     func isNumberEven(number: Int, callback: (Bool) -> Void) {
         // compare the `number` is even, then return the result with callback
+        callback(number % 2 == 0)
     }
     
     func fillSentence(sentence: inout String, words: [String]) {
