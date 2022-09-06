@@ -436,7 +436,9 @@ class SwiftFundamentals1: SwiftFundamentals1Protocol {
     
     func insert(array: [Int], value: Int, position: Int) -> [Int] {
         // insert the `value` into `position` of `array` and return the result array
-        return []
+        var inserted = array
+        inserted.insert(value, at: position)
+        return inserted
     }
     
     func isNumberEven(number: Int, callback: (Bool) -> Void) {
