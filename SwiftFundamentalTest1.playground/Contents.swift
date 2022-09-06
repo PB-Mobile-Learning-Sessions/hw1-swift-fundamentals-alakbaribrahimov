@@ -86,7 +86,7 @@ class SwiftFundamentalsTest1: XCTestCase {
     func testReverse() {
         let array = [901,722,917,804,117,610,170,734,543,370,11,221,32,794,832,635,315,230,957,559,706,904,31,94,919,20,117]
         let reversedArray = self.instance.reverse(array: array)
-        let expectedValue = [901, 722, 917, 804, 117, 610, 170, 734, 543, 370, 11, 221, 32, 794, 832, 635, 315, 230, 957, 559, 706, 904, 31, 94, 919, 20, 117]
+        let expectedValue = [117, 20, 919, 94, 31, 904, 706, 559, 957, 230, 315, 635, 832, 794, 32, 221, 11, 370, 543, 734, 170, 610, 117, 804, 917, 722, 901]
         
         XCTAssertEqual(reversedArray, expectedValue, "Array should be reversed")
     }
@@ -431,7 +431,7 @@ class SwiftFundamentals1: SwiftFundamentals1Protocol {
     
     func reverse(array: [Int]) -> [Int] {
         // return the reversed array of integer array `array`
-        return []
+        return array.reversed()
     }
     
     func insert(array: [Int], value: Int, position: Int) -> [Int] {
