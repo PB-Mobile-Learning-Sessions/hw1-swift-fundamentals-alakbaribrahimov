@@ -399,7 +399,13 @@ class SwiftFundamentalsTest1: XCTestCase {
 class SwiftFundamentals1: SwiftFundamentals1Protocol {
     func generateUniqueEvenIntArray(size: Int) -> [Int] {
         // return an array of random, unique, even integer numbers with the size of `number`
-        return []
+        var uniqueEvenList = [Int]()
+        var even = 0
+        for _ in 0 ..< size {
+            uniqueEvenList.append(even)
+            even += 2
+        }
+        return uniqueEvenList
     }
     
     func filterEvenNumbers(array: [Int]) -> [Int] {
