@@ -493,7 +493,11 @@ class SwiftFundamentals1: SwiftFundamentals1Protocol {
     
     func getValuesIfContains(from dictionary: Dictionary<String, Int>, with keys: Set<String>) -> Dictionary<String, Int> {
         // return the dictionary with key and value pairs if key occurs in `keys` set
-        return Dictionary<String, Int>()
+        var result = [String : Int]()
+        keys.forEach { key in
+            if result[key] != nil { result[key] = dictionary[key] }
+        }
+        return result
     }
     
     func updatePersonName(person: inout Person, name: String) -> Person {
