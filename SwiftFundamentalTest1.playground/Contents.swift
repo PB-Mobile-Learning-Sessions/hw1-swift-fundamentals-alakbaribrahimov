@@ -410,7 +410,13 @@ class SwiftFundamentals1: SwiftFundamentals1Protocol {
     
     func filterEvenNumbers(array: [Int]) -> [Int] {
         // return the filtered version of `array` only contains even numbers
-        return []
+        var evenArray = [Int]()
+        array.forEach { num in
+            if num % 2 == 0 {
+                evenArray.append(num)
+            }
+        }
+        return evenArray
     }
     
     func longNumberText(number: Int) -> String {
