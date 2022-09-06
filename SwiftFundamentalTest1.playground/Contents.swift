@@ -422,7 +422,11 @@ class SwiftFundamentals1: SwiftFundamentals1Protocol {
     func longNumberText(number: Int) -> String {
         // return the integer number sequence until `number` with appended into a string
         // example: input `number` = 5, output should be "012345"
-        return ""
+        var stringNum = String()
+        for item in 0 ... number {
+            stringNum.append(String(item))
+        }
+        return stringNum
     }
     
     func reverse(array: [Int]) -> [Int] {
