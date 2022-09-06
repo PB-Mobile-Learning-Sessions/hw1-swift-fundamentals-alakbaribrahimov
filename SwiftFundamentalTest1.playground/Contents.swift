@@ -461,7 +461,8 @@ class SwiftFundamentals1: SwiftFundamentals1Protocol {
     
     func getUniqueElements(array: [Int]) -> [Int] {
         // return the only unique elements of array
-        return []
+        let uniqueElements = Array(Set(array))
+        return uniqueElements.sorted()
     }
     
     func commonElements(set1: Set<Int>, set2: Set<Int>) -> Set<Int> {
