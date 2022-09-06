@@ -448,6 +448,15 @@ class SwiftFundamentals1: SwiftFundamentals1Protocol {
     
     func fillSentence(sentence: inout String, words: [String]) {
         // replace the occurence of `{word}` substrings in the `sentence` value with `words`
+        var arr = Array(sentence)
+        var words = words
+
+        for i in 0 ..< arr.count {
+            if arr[i] == "{" {
+                arr.replaceSubrange(i ... i + 5, with: Array(words.removeFirst()))
+            }
+        }
+        sentence = String(arr)
     }
     
     func getUniqueElements(array: [Int]) -> [Int] {
