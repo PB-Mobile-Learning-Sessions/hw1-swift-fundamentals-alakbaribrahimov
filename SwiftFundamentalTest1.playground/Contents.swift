@@ -601,10 +601,11 @@ class Shape {
 }
 
 class Circle: Shape {
-    let radius: Int = 0
+    var radius: Int = 0 // modified
     
     init(radius: Int, color: String) {
-        super.init(color: "")
+        super.init(color: color) // modified
+        self.radius = radius // modified
     }
     
     required init(color: String) {
